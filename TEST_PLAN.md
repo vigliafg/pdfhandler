@@ -1,4 +1,4 @@
-# 🧪 PDF Toolkit — Piano di Test Page Tools v3.1
+# 🧪 pdfhandler — Piano di Test Page Tools v3.1
 
 **Data**: 28 Giugno 2026
 **Versione target**: 3.1.0

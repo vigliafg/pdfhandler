@@ -1,7 +1,7 @@
 [package]
 name = "pdfhandler"
 version = "0.1.0"
-description = "PDF Toolkit - Edit, merge, split, and reorder PDF documents"
+description = "pdfhandler - Edit, merge, split, and reorder PDF documents"
 authors = ["you"]
 license = ""
 repository = ""

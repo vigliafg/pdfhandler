@@ -1,4 +1,4 @@
-# 🔷 REFACTORING PLAN — PDF Toolkit v3.0
+# 🔷 REFACTORING PLAN — pdfhandler v3.0
 
 **Data**: 28 Giugno 2026
 **Versione target**: 3.0.0

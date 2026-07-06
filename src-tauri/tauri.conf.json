@@ -1,6 +1,6 @@
 {
   "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
-  "productName": "PDF Toolkit",
+  "productName": "pdfhandler",
   "version": "0.1.0",
   "identifier": "com.pdfhandler.app",
   "build": {
@@ -12,7 +12,7 @@
   "app": {
     "windows": [
       {
-        "title": "PDF Toolkit",
+        "title": "pdfhandler",
         "width": 1280,
         "height": 800,
         "minWidth": 900,
@@ -46,9 +46,6 @@
     "linux": {
       "deb": {
         "depends": []
-      },
-      "appimage": {
-        "bundleMediaFramework": false
       }
     }
   }

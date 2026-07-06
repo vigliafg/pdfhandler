@@ -2,7 +2,7 @@
 
 ## Panoramica
 
-Suite di test E2E Playwright per PDF Toolkit (77 test totali, file `tests/full-suite.spec.ts`).  
+Suite di test E2E Playwright per pdfhandler (77 test totali, file `tests/full-suite.spec.ts`).  
 La suite sezioni 1-9 passa. La **sezione 10 (TOC Preservation)** ha 4 test falliti su 6.
 
 I test usano il PDF Harrison (290 MB, 4272 pagine, 591 bookmark, 4 livelli di profondità TOC).

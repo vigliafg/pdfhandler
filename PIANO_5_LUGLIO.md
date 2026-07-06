@@ -1,6 +1,6 @@
 # 📋 Piano di lavoro — 5 Luglio 2026
 
-**Progetto**: PDF Toolkit v3.3  
+**Progetto**: pdfhandler v3.3  
 **Stato partenza**: 85 test ✅, 15 modali con HelpBox + ErrorBanner + try/catch ✅, typecheck 0 ✅  
 **Obiettivo giornata**: 5 fasi, ~7-8 ore di lavoro
 

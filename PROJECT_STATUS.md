@@ -1,4 +1,4 @@
-# 📄 PDF Toolkit — Stato del Progetto
+# 📄 pdfhandler — Stato del Progetto
 
 **Data**: 28 Giugno 2026  
 **Versione**: 3.1.0  

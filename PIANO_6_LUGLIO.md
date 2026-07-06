@@ -1,6 +1,6 @@
 # 📋 Piano di lavoro — 6 Luglio 2026
 
-**Progetto**: PDF Toolkit v3.4
+**Progetto**: pdfhandler v3.4
 **Stato partenza**: 85 test ✅, FASI 1-5 completate ✅, typecheck 0 ✅
 **Obiettivo giornata**: Verifica completa + FASE 6 (Extract & Montage) + spostamento in cartella GitHub
 

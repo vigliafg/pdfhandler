@@ -54,7 +54,7 @@ jobs:
         if: matrix.platform == 'ubuntu-22.04'
         run: |
           echo "RUSTFLAGS=-C target-cpu=x86-64" >> $GITHUB_ENV
-          echo "APPIMAGE_EXTRACT_AND_RUN=1" >> $GITHUB_ENV
+
 
       - name: Tauri Build
         uses: tauri-apps/tauri-action@v0
@@ -62,15 +62,15 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tagName: ${{ github.ref_name }}
-          releaseName: 'PDF Toolkit ${{ github.ref_name }}'
+          releaseName: 'pdfhandler ${{ github.ref_name }}'
           releaseBody: |
-            ## PDF Toolkit ${{ github.ref_name }}
+            ## pdfhandler ${{ github.ref_name }}
 
             ### Download
             - **Windows**: `.msi` or `.exe` installer
             - **macOS (Apple Silicon)**: `.dmg` (aarch64)
             - **macOS (Intel)**: `.dmg` (x86_64)
-            - **Linux**: `.deb` or `.AppImage`
+            - **Linux**: `.deb`
 
             ### Features
             - Merge, split, extract, rotate, reorder PDF pages
