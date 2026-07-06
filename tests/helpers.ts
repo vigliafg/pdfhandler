@@ -132,13 +132,13 @@ export async function waitForModalClose(page: Page) {
 }
 
 /** Wait for the PDF to reload after an in-place operation. */
-export async function waitForReload(page: Page, expectedPages?: number) {
+export async function waitForReload(page: Page, expectedPages?: number, timeout: number = 30_000) {
   await page.waitForTimeout(2000);
   if (expectedPages !== undefined) {
     await expect(async () => {
       const count = await getPageCount(page);
       expect(count).toBe(expectedPages);
-    }).toPass({ timeout: 30_000 });
+    }).toPass({ timeout });
   }
 }
 

@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Test PDF files (used by Playwright E2E tests)
+*.pdf

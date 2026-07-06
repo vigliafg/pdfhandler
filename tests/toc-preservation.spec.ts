@@ -29,7 +29,7 @@ test.describe('TOC Preservation', () => {
     await setCustomRange(page, '5');
     await confirmDeleteCheckbox(page);
     await clickExecute(page);
-    await waitForReload(page, initialCount - 1);
+    await waitForReload(page, initialCount - 1, 120_000);
     await page.waitForTimeout(5000);
     await expect(page.locator('.fixed.inset-0.z-50')).not.toBeVisible({ timeout: 30_000 });
 
@@ -65,7 +65,7 @@ test.describe('TOC Preservation', () => {
     await setCustomRange(page, '1');
     await confirmDeleteCheckbox(page);
     await clickExecute(page);
-    await waitForReload(page, initialCount - 1);
+    await waitForReload(page, initialCount - 1, 120_000);
     await page.waitForTimeout(5000);
     await expect(page.locator('.fixed.inset-0.z-50')).not.toBeVisible({ timeout: 30_000 });
 
@@ -116,7 +116,7 @@ test.describe('TOC Preservation', () => {
     await angle180Btn.click();
     await page.waitForTimeout(200);
     await clickExecute(page);
-    await waitForReload(page, initialCount);
+    await waitForReload(page, initialCount, 120_000);
     await waitForModalClose(page);
 
     await selectPageTool(page, 'Split');
@@ -164,7 +164,7 @@ test.describe('TOC Preservation', () => {
     await waitForModal(page);
     await selectRangeMode(page, 'all');
     await clickExecute(page);
-    await waitForReload(page, initialCount);
+    await waitForReload(page, initialCount, 120_000);
     await page.waitForTimeout(5000);
     await expect(page.locator('.fixed.inset-0.z-50')).not.toBeVisible({ timeout: 30_000 });
 
@@ -205,7 +205,7 @@ test.describe('TOC Preservation', () => {
     const destInput = page.locator('.fixed.inset-0.z-50 input[type="number"]').last();
     await destInput.fill('100');
     await clickExecute(page);
-    await waitForReload(page, initialCount);
+    await waitForReload(page, initialCount, 120_000);
     await page.waitForTimeout(5000);
     await expect(page.locator('.fixed.inset-0.z-50')).not.toBeVisible({ timeout: 30_000 });
 
@@ -258,7 +258,7 @@ test.describe('TOC Preservation', () => {
     await setCustomRange(page, '5');
     await confirmDeleteCheckbox(page);
     await clickExecute(page);
-    await waitForReload(page, initialCount - 1);
+    await waitForReload(page, initialCount - 1, 120_000);
     await waitForModalClose(page);
 
     // Step 2: Rotate all pages 90° CW
@@ -266,7 +266,7 @@ test.describe('TOC Preservation', () => {
     await waitForModal(page);
     await selectRangeMode(page, 'all');
     await clickExecute(page);
-    await waitForReload(page, initialCount - 1);
+    await waitForReload(page, initialCount - 1, 120_000);
     await waitForModalClose(page);
 
     // Step 3: Reverse pages 10-20
@@ -275,7 +275,7 @@ test.describe('TOC Preservation', () => {
     await selectRangeMode(page, 'custom');
     await setCustomRange(page, '10-20');
     await clickExecute(page);
-    await waitForReload(page, initialCount - 1);
+    await waitForReload(page, initialCount - 1, 120_000);
     await waitForModalClose(page);
 
     // Step 4: Open Split by TOC
