@@ -52,9 +52,7 @@ jobs:
 
       - name: Set CPU compatibility flags (Linux)
         if: matrix.platform == 'ubuntu-22.04'
-        run: |
-          echo "RUSTFLAGS=-C target-cpu=x86-64" >> $GITHUB_ENV
-          echo "WEBKIT_DISABLE_SANDBOX=1" >> $GITHUB_ENV
+        run: echo "RUSTFLAGS=-C target-cpu=x86-64" >> $GITHUB_ENV
 
       - name: Tauri Build
         uses: tauri-apps/tauri-action@v0
