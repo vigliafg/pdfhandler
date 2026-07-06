@@ -1,5 +1,5 @@
 /**
- * PDF Toolkit — Extract & Montage (Compose) Tool E2E Tests
+ * pdfhandler — Extract & Montage (Compose) Tool E2E Tests
  * 8 test cases — FASE 6
  */
 import { test, expect } from '@playwright/test';

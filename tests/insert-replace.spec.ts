@@ -1,5 +1,5 @@
 /**
- * PDF Toolkit — Insert / Replace Tool E2E Tests
+ * pdfhandler — Insert / Replace Tool E2E Tests
  * 12 test cases
  */
 import { test, expect, type Page } from '@playwright/test';

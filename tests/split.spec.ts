@@ -1,5 +1,5 @@
 /**
- * PDF Toolkit — Split Tool E2E Tests
+ * pdfhandler — Split Tool E2E Tests
  * 14 test cases (including 2 TOC-split tests with Harrison PDF)
  */
 import { test, expect } from '@playwright/test';

@@ -1,5 +1,5 @@
 /**
- * PDF Toolkit — Merge Tool E2E Tests
+ * pdfhandler — Merge Tool E2E Tests
  * 7 test cases
  */
 import { test, expect, type Page } from '@playwright/test';

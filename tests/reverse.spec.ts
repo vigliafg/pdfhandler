@@ -1,5 +1,5 @@
 /**
- * PDF Toolkit — Reverse Tool E2E Tests
+ * pdfhandler — Reverse Tool E2E Tests
  * 6 test cases
  */
 import { test, expect } from '@playwright/test';

@@ -1,5 +1,5 @@
 /**
- * PDF Toolkit — Extract Tool E2E Tests
+ * pdfhandler — Extract Tool E2E Tests
  * 11 test cases
  */
 import { test, expect } from '@playwright/test';

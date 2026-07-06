@@ -1,5 +1,5 @@
 /**
- * PDF Toolkit — TOC Preservation E2E Tests
+ * pdfhandler — TOC Preservation E2E Tests
  * 6 test cases (Harrison PDF, 277 MB, 591 bookmarks)
  */
 import { test, expect } from '@playwright/test';

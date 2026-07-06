@@ -1,5 +1,5 @@
 /**
- * PDF Toolkit — Delete Tool E2E Tests
+ * pdfhandler — Delete Tool E2E Tests
  * 7 test cases
  */
 import { test, expect } from '@playwright/test';

@@ -1,5 +1,5 @@
 /**
- * PDF Toolkit — Rotate Tool E2E Tests
+ * pdfhandler — Rotate Tool E2E Tests
  * 6 test cases
  */
 import { test, expect } from '@playwright/test';

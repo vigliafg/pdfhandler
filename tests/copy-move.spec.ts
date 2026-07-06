@@ -1,5 +1,5 @@
 /**
- * PDF Toolkit — Copy / Move Tool E2E Tests
+ * pdfhandler — Copy / Move Tool E2E Tests
  * 9 test cases
  */
 import { test, expect } from '@playwright/test';
