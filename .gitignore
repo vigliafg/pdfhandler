@@ -25,3 +25,6 @@ dist-ssr
 
 # Test PDF files (used by Playwright E2E tests)
 *.pdf
+
+# Tauri
+src-tauri/target

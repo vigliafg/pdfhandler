@@ -9,7 +9,7 @@ import {
   WarningBanner,
   parseRangeString,
 } from './shared';
-import type { SourcePDF, Chunk } from '../../lib/pdfComposer';
+import type { SourcePDF, Chunk } from '../../../lib/pdfComposer';
 
 const CHUNK_COLORS = [
   'border-l-blue-500',

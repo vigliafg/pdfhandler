@@ -1,7 +1,8 @@
 import * as pdfjsLib from 'pdfjs-dist';
+// Import worker locally for offline/desktop support (Tauri)
+import workerUrl from 'pdfjs-dist/build/pdf.worker.min.mjs?url';
 
-// Use CDN worker for simplicity and reliability
-pdfjsLib.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjsLib.version}/build/pdf.worker.min.mjs`;
+pdfjsLib.GlobalWorkerOptions.workerSrc = workerUrl;
 
 export type PDFDocument = pdfjsLib.PDFDocumentProxy;
 

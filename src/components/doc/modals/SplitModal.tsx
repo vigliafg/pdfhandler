@@ -52,7 +52,7 @@ function flattenTOCForPreview(
   items: TOCItem[],
   depth: TOCDepth,
   totalPages: number,
-  currentDepth: number = 0,
+  _currentDepth: number = 0,
 ): { title: string; page: number }[] {
   const collected: { title: string; page: number; depth: number }[] = [];
 
@@ -228,8 +228,6 @@ export function SplitModal({
         ranges.unshift({ title: 'Front Matter', start: 1, end: ranges[0].start - 1 });
       }
 
-      const depthLabel =
-        tocDepth === 'all' ? 'All' : `Level ${tocDepth}`;
       const lines = ranges.map((r) => {
         const safe = sanitizeTOCFilename(r.title, 36);
         return `${safe}  →  pp. ${r.start}–${r.end} (${r.end - r.start + 1} pp.)`;

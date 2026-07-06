@@ -38,7 +38,7 @@ function fitScale(cw: number, cols: number, pageW: number): number {
   return (cw - pad - (cols - 1) * COL_GAP) / (cols * pageW);
 }
 
-export function StandardViewer({ pdf, numPages, pdfBytes, fileName, onDownload, scrollToPage, onCurrentPageChange, tocOpen, onTOCToggle }: StandardViewerProps) {
+export function StandardViewer({ pdf, numPages, pdfBytes: _pdfBytes, fileName: _fileName, onDownload, scrollToPage, onCurrentPageChange, tocOpen, onTOCToggle }: StandardViewerProps) {
   const scrollRef = useRef<HTMLDivElement>(null);
   const pageContainerRef = useRef<HTMLDivElement>(null);
   const canvasPoolRef = useRef<PageSlot[]>([]);

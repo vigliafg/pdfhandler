@@ -2,6 +2,8 @@ import { PDFDocument, degrees, toDegrees } from 'pdf-lib';
 import JSZip from 'jszip';
 import type { InsertDest } from './pdfMapping';
 
+type InsertDestination = InsertDest;
+
 // ─── Helpers ────────────────────────────────────────────────
 
 /** Load a PDF from ArrayBuffer, with encryption tolerance. */
@@ -245,7 +247,6 @@ export async function replacePages(
   const replTotal = replDoc.getPageCount();
 
   // Sort target page numbers and get 0-based indices
-  const sortedTarget = [...targetPageNumbers].sort((a, b) => a - b);
   const targetIndices = toIndices(targetPageNumbers);
   const targetSet = new Set(targetIndices);
 
@@ -270,7 +271,6 @@ export async function replacePages(
 
   // Build the new document: walk through target pages,
   // replacing the first encountered target page range with all replacement pages
-  const firstTargetIdx = Math.min(...targetIndices);
   let replaced = false;
 
   for (let i = 0; i < targetTotal; i++) {
@@ -563,7 +563,7 @@ function resolveTOCPage(item: TOCItem): number | null {
 function flattenTOC(
   items: TOCItem[],
   depth: TOCDepth,
-  currentDepth: number = 0,
+  _currentDepth: number = 0,
   totalPages?: number,
 ): TOCRange[] {
   const collected: { title: string; page: number; depth: number }[] = [];
@@ -632,7 +632,7 @@ export async function splitByTOC(
   sourcePdfBytes: ArrayBuffer,
   tocItems: TOCItem[],
   depth: TOCDepth,
-  baseFilename: string,
+  _baseFilename: string,
   pageFilter?: number[],
   onProgress?: (current: number, total: number, label: string) => void,
 ): Promise<Uint8Array> {
@@ -927,8 +927,7 @@ export async function movePages(
 
 // ─── Insert ─────────────────────────────────────────────────
 
-export { InsertDest as InsertDestination };
-
+export type { InsertDest as InsertDestination };
 export type { InsertDest };
 
 /**
