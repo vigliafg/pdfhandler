@@ -7,8 +7,8 @@
   
   body {
     @apply m-0 bg-zinc-950 text-zinc-100 font-sans antialiased overflow-hidden;
-    height: 100dvh;
-    width: 100dvw;
+    height: 100vh;
+    width: 100vw;
   }
 
   #root {
