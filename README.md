@@ -1,26 +1,28 @@
 # 📄 pdfhandler
 
-**pdfhandler** is a cross-platform desktop application for manipulating PDF documents. Built with **React**, **TypeScript**, **Tauri v2**, and **Tailwind CSS**, it offers a complete suite of page-level and document-level tools — all running locally on your machine with a modern, dark-themed UI.
+**pdfhandler** is a web application for manipulating PDF documents. Built with **React**, **TypeScript**, and **Tailwind CSS**, it offers a complete suite of page-level and document-level tools — all running in your browser with a modern, dark-themed UI.
 
 No uploads to external servers. No watermarks. No paywalls. Everything happens client-side.
 
 <p align="center">
-  <img src="https://img.shields.io/badge/platform-linux%20%7C%20macos%20%7C%20windows-blue" alt="Platforms" />
-  <img src="https://img.shields.io/badge/built%20with-Tauri%20v2-ffc131?logo=tauri" alt="Tauri v2" />
+  <img src="https://img.shields.io/badge/platform-web-blue" alt="Platform" />
+  <img src="https://img.shields.io/badge/deployed-Cloudflare%20Pages-f38020?logo=cloudflare" alt="Cloudflare Pages" />
   <img src="https://img.shields.io/badge/React-19-61dafb?logo=react" alt="React 19" />
   <img src="https://img.shields.io/badge/TypeScript-6.0-3178c6?logo=typescript" alt="TypeScript" />
 </p>
+
+**🔗 Live app:** [pdfhandler.vigliafg.workers.dev](https://pdfhandler.vigliafg.workers.dev)
 
 ---
 
 ## Table of Contents
 
 - [Introduction](#introduction)
-- [Launch Modes](#launch-modes)
+- [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
-  - [Development (Browser)](#development-browser)
-  - [Development (Desktop App)](#development-desktop-app)
+  - [Development (Local)](#development-local)
   - [Production Build](#production-build)
+  - [Deploy (Cloudflare Pages)](#deploy-cloudflare-pages)
 - [Application Overview](#application-overview)
   - [Viewer Mode](#viewer-mode)
   - [Editor Mode](#editor-mode)
@@ -68,20 +70,22 @@ Key design principles:
 
 ---
 
-## Launch Modes
+## Getting Started
 
 ### Prerequisites
 
 - **Node.js** ≥ 18
 - **npm** (or pnpm/yarn)
-- **Rust** toolchain (for Tauri builds only) — install via [rustup.rs](https://rustup.rs)
-- **System dependencies for Tauri on Linux**: `libwebkit2gtk-4.1-dev`, `libgtk-3-dev`, `libayatana-appindicator3-dev`, and others. See the [Tauri prerequisites](https://v2.tauri.app/start/prerequisites/).
 
-### Development (Browser)
+### Development (Local)
 
-Run the app in your browser with hot module replacement (HMR). Note: some Tauri-specific features (like native file dialogs) are not available in browser mode.
+Run the app in your browser with hot module replacement (HMR):
 
 ```bash
+# Clone the repository
+git clone https://github.com/vigliafg/pdfhandler.git
+cd pdfhandler
+
 # Install dependencies
 npm install
 
@@ -89,38 +93,28 @@ npm install
 npm run dev
 ```
 
-Open `http://localhost:5173` in your browser.
-
-### Development (Desktop App)
-
-Run the full desktop application with Tauri's WebView. This gives you native window management and the full feature set.
-
-```bash
-# Install dependencies
-npm install
-
-# Start Tauri dev mode
-npm run tauri dev
-```
+Open **http://localhost:5173** in your browser.
 
 ### Production Build
 
-Build the desktop application for your current platform.
+Build the static site for deployment:
 
 ```bash
-npm run tauri build
+npm run build
 ```
 
-The output will be in `src-tauri/target/release/bundle/`:
-- **Linux**: `.deb` package and AppImage
-- **macOS**: `.dmg` disk image
-- **Windows**: `.msi` installer
+The output is in the `dist/` directory — ready to be deployed to any static hosting (Cloudflare Pages, Vercel, Netlify, etc.).
 
-To build for a specific target:
+### Deploy (Cloudflare Pages)
 
-```bash
-npm run tauri build -- --target x86_64-unknown-linux-gnu
-```
+1. Push the code to a GitHub repository
+2. Go to [Cloudflare Dashboard](https://dash.cloudflare.com) → **Workers & Pages** → **Create a project** → **Connect to Git**
+3. Connect your repository and set:
+   - **Build command:** `npm run build`
+   - **Build output directory:** `dist`
+4. Deploy — Cloudflare automatically builds and deploys on every push to `main`
+
+The build output is a fully static site compatible with any hosting provider (Cloudflare Pages, Vercel, Netlify, etc.).
 
 ---
 
@@ -359,7 +353,6 @@ The TOC is extracted via `pdfjs-dist`'s `getOutline()` API and written back usin
 | **PDF Manipulation** | pdf-lib 1.17 |
 | **Virtual Scrolling** | @tanstack/react-virtual 3 |
 | **Archiving** | JSZip 3 |
-| **Desktop Shell** | Tauri 2.11 (Rust) |
 | **Testing** | Playwright 1.61 |
 | **Linting** | ESLint 10 |
 
@@ -417,12 +410,6 @@ pdfhandler/
 │       ├── pdfRenderer.ts        # pdfjs-dist rendering utilities
 │       ├── pdfMapping.ts         # Page number remapping for TOC preservation
 │       └── pdfOutline.ts         # TOC/outline read/write utilities
-├── src-tauri/                    # Tauri (Rust) backend
-│   ├── Cargo.toml
-│   ├── tauri.conf.json           # Window config, bundle settings
-│   └── src/
-│       ├── main.rs               # Rust entry point
-│       └── lib.rs                # Tauri plugin setup
 ├── tests/                        # Playwright E2E tests
 │   ├── smoke.spec.ts
 │   ├── extract.spec.ts
@@ -440,6 +427,8 @@ pdfhandler/
 ├── playwright.config.ts
 ├── vite.config.ts
 ├── tsconfig.json
+├── tsconfig.app.json
+├── tsconfig.node.json
 ├── package.json
 └── README.md
 ```
