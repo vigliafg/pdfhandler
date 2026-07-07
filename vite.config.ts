@@ -5,13 +5,18 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   plugins: [react(), tailwindcss()],
 
-  // Tauri configuration
+  // Relative paths work with both dev server (http://) and custom protocol (app://)
+  base: './',
+
   server: {
     port: 5173,
     strictPort: true,
   },
-  envPrefix: ['VITE_', 'TAURI_'],
 
-  // Prevent Vite from obscuring Rust errors
-  clearScreen: false,
+  envPrefix: ['VITE_'],
+
+  build: {
+    outDir: 'dist',
+    emptyOutDir: true,
+  },
 })
