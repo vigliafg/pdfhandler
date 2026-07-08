@@ -25,3 +25,7 @@ dist-ssr
 
 # Test PDF files (used by Playwright E2E tests)
 *.pdf
+
+# Playwright output
+playwright-report/
+test-results/
